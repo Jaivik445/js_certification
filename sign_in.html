@@ -167,12 +167,12 @@
             const username = user.username.value;
             const password = user.password.value;
             if( username ===  password ){
-                alert("swap");
+                alert("Login Successfully!!!");
                 window.localStorage.setItem("loginS", "true")
                 window.location.href="Orders.html"
             }
             else{
-                alert("no swap");
+                alert("Invalid Credentials!!");
             }
         });
         
