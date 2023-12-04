@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&amp;display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Sign in</title>
+
+    <style>
+        .topper {
+
+            height: 100px;
+            width: 100%;
+            padding: 0 48px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            box-shadow: 0 2px 4px #ccc;
+            background-color: #fff;
+            justify-content: space-between;
+        }
+
+        img {
+            margin-top: 30px;
+            height: 35px;
+            width: 35px;
+        }
+
+        .Topbar_BrandName {
+            font-family: "poppins", sans-serif;
+            font-size: 24px;
+            letter-spacing: -1px;
+            font-weight: 500;
+            margin: 0;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 46px;
+            margin-top: -35px;
+            font-size: 30px;
+            cursor: pointer;
+
+        }
+
+        .para {
+            font-family: "poppins", sans-serif;
+
+
+            font-weight: 500;
+            margin: 0;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 190px;
+            margin-top: -22px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .para1 {
+            font-family: "poppins", sans-serif;
+
+
+            font-weight: 500;
+            margin: 0;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 260px;
+            margin-top: -20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .para2 {
+            font-family: "poppins", sans-serif;
+
+
+            font-weight: 500;
+            margin: 0;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 342px;
+            margin-top: -20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+
+        .form1 {
+
+            width: 100%;
+            max-width: 500px;
+            border-radius: 6px;
+            background-color: #fff;
+            margin: 0 auto;
+            padding: 32px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 6px #ccc;
+        }
+
+        .main {
+            margin-top: 150px;
+        }
+
+        .form1 h1 {
+            font-family: "poppins", sans-serif;
+            letter-spacing: 1px;
+            font-weight: 500;
+            margin: 0 0 24px;
+        }
+
+        .Username {
+            width: 100%;
+            padding-top: 16px;
+            font-size: 14px;
+            box-sizing: border-box;
+            border: 0;
+            border-bottom: 2px solid #8c8c8c;
+            margin-bottom: 16px;
+            outline: none;
+        }
+
+        .submit {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 14px 36px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            background-color: #20b883;
+            color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topper">
+        <img src="https://edu-web-fundamentals.web.app/static/media/logo.58169365.png" alt="logo">
+        <p class="Topbar_BrandName">Kafene</p>
+        <p class="para">Orders</p>
+        <p class="para1">Products</p>
+        <p class="para2">Users</p>
+
+    </div>
+
+    <main class="main">
+        <form class="form1" id="form1">
+            <h1>Sign In</h1>
+            <input class="Username" id="user" type="text" name="username" placeholder="Enter Username" fdprocessedid="rc3508">
+            <input class="Username" id="pass" type="password" name="password" placeholder="Enter Password" fdprocessedid="2b27og">
+            <input class="submit" id="sub" type="submit" value="Login" fdprocessedid="kdqkmd">
+        </form>
+    </main>
+
+
+    <script>
+                
+        const user = document.getElementById("form1");
+        const sub = document.getElementById("sub");
+        sub.addEventListener("click", (e)=>{
+            e.preventDefault();
+            const username = user.username.value;
+            const password = user.password.value;
+            if( username ===  password ){
+                alert("swap");
+                window.localStorage.setItem("loginS", "true")
+                window.location.href="Orders.html"
+            }
+            else{
+                alert("no swap");
+            }
+        });
+        
+        
+let Cuttent_S = window.localStorage.getItem("loginS");
+if(status == "true"){
+    window.location.href="Orders.html";
+}
+
+    </script>
+
+</body>
+
+</html>
